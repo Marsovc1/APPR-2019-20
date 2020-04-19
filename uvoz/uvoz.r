@@ -4,7 +4,7 @@ sl <- locale("sl", decimal_mark=",", grouping_mark=".")
 
 # Funkcija, ki uvozi občine iz Wikipedije
 uvozi.obcine <- function() {
-  link <- "http://sl.wikipedia.org/wiki/Seznam_ob%C4%8Din_v_Sloveniji"
+  link <- "https://en.wikipedia.org/wiki/2019%E2%80%9320_FC_Barcelona_season#Transfer_summary"
   stran <- html_session(link) %>% read_html()
   tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
     .[[1]] %>% html_table(dec=",")
