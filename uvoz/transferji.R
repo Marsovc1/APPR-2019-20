@@ -42,7 +42,7 @@ names(transfer) <- ime
 for (i in 1:23){
   ime = names(transfer[i])
   dat = paste0(ime,".Rda")
-  path = file.path("C:", "Users", "marsovc", "Documents", "Analiza Transferjev FC Barcelona", "uvoz", "dataframes", dat)
+  path = file.path("C:", "Users", "marsovc", "Documents", "Analiza Transferjev FC Barcelona", "podatki", dat)
   save(ime, file = path)
 }
 
