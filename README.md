@@ -7,8 +7,16 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2019/20
 
 ## Tematika
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal.
-Tukaj boste napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+Analiziral bom nogometne prestope kluba FC Barcelona zadnjih 10 let
+
+Cilj je analizirati podatke kot so:
+* Državljanstvo igralcev v prestopih (države od koder je največ prihodov)
+* Cene prestopov in cenovna nihanja (vpliv prestopa Neymarja v PSG)
+* Starost (koliko so v povprečju stari nogometaši, ki prihajajo in odhajajo)
+* Pozicija na igrišču (katera vloga na igrišču je "bolj iskana" v klubu)
+
+VIR: Podatke bom dobil iz tabel na wikipedii na straneh oblike: https://en.wikipedia.org/wiki/"sezona"_FC_Barcelona_season.
+Podatke (html tabele) bom prek paketa XML spremenil v R-prijazne tabele in jih po potrebi uredil, glede na podatke, ki jih potrebujem.
 
 ## Program
 
