@@ -176,6 +176,7 @@ uvoz <- function(i){
     
     tabelaIN$`Vrednost transferja` <- (as.numeric(tabelaIN$`Vrednost transferja`)/1000000)
     tabelaOUT$`Vrednost transferja` <- (as.numeric(tabelaOUT$`Vrednost transferja`)/1000000)
+    print(tabelaOUT$`Vrednost transferja`)
   }
   
   else{
@@ -222,7 +223,6 @@ uvoz <- function(i){
     tabelaOUT$`Vrednost transferja` <- gsub("€",'',tabelaOUT$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub("/",'',tabelaOUT$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub(" ",'',tabelaOUT$`Vrednost transferja`)
-
     
     #split po ',' in sestejem, če prazno vrnem 0
     vredIN = vector()

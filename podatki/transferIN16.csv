@@ -1,10 +1,10 @@
 "","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
-"1","Denis Suárez",22,"MF","Villarreal",NA,"Spain",2016
+"1","Denis Suárez",22,"MF","Villarreal",3.25,"Spain",2016
 "2","Martín Montoya",25,"RB","Real Betis",0,"Spain",2016
 "3","Alen Haliloviæ",20,"MF","Sporting Gijón",0,"Croatia",2016
 "4","Cristian Tello",24,"FW","Fiorentina",0,"Spain",2016
-"5","Samuel Umtiti",22,"DF","Lyon",NA,"France",2016
-"6","Lucas Digne",22,"DF","Paris Saint-Germain",NA,"France",2016
-"7","André Gomes",22,"MF","Valencia",NA,"Portugal",2016
-"8","Jasper Cillessen",27,"GK","Ajax",NA,"Netherlands",2016
-"9","Paco Alcácer",23,"FW","Valencia",NA,"Spain",2016
+"5","Samuel Umtiti",22,"DF","Lyon",25,"France",2016
+"6","Lucas Digne",22,"DF","Paris Saint-Germain",20.5,"France",2016
+"7","André Gomes",22,"MF","Valencia",55,"Portugal",2016
+"8","Jasper Cillessen",27,"GK","Ajax",15,"Netherlands",2016
+"9","Paco Alcácer",23,"FW","Valencia",32,"Spain",2016
