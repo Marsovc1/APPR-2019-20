@@ -1,11 +1,11 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Xavi",35,"MF","Al-Sadd",0,"Spain"
-"2","Gerard Deulofeu",21,"FW","Everton",6,"Spain"
-"3","Martín Montoya",24,"DF","Internazionale",1,"Spain"
-"4","Ibrahim Afellay",29,"FW","Stoke City",0,"Netherlands"
-"5","Pedro",28,"FW","Chelsea",30,"Spain"
-"6","Alen Haliloviæ",19,"MF","Sporting Gijón",0,"Croatia"
-"7","Denis Suárez",21,"MF","Villarreal",4,"Spain"
-"8","Alex Song",27,"MF","West Ham United",0,"Cameroon"
-"9","Adama Traoré",19,"FW","Aston Villa",12,"Spain"
-"10","Cristian Tello",24,"FW","Fiorentina",0,"Spain"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Xavi",35,"MF","Al-Sadd",0,"Spain",2015
+"2","Gerard Deulofeu",21,"FW","Everton",NA,"Spain",2015
+"3","Martín Montoya",24,"DF","Internazionale",NA,"Spain",2015
+"4","Ibrahim Afellay",29,"FW","Stoke City",0,"Netherlands",2015
+"5","Pedro",28,"FW","Chelsea",NA,"Spain",2015
+"6","Alen Haliloviæ",19,"MF","Sporting Gijón",0,"Croatia",2015
+"7","Denis Suárez",21,"MF","Villarreal",NA,"Spain",2015
+"8","Alex Song",27,"MF","West Ham United",0,"Cameroon",2015
+"9","Adama Traoré",19,"FW","Aston Villa",NA,"Spain",2015
+"10","Cristian Tello",24,"FW","Fiorentina",0,"Spain",2015

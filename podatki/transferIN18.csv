@@ -1,6 +1,6 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Arthur",21,"MF","Gremio",31,"Brazil"
-"2","Clément Lenglet",23,"DF","Sevilla",35.9,"France"
-"3","Malcom",21,"FW","Bordeaux",41,"Brazil"
-"4","Arturo Vidal",31,"MF","Bayern Munich",-1,"Chile"
-"5","Jean-Clair Todibo",19,"DF","Toulouse",1,"France"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Arthur",21,"MF","Gremio",NA,"Brazil",2018
+"2","Clément Lenglet",23,"DF","Sevilla",NA,"France",2018
+"3","Malcom",21,"FW","Bordeaux",NA,"Brazil",2018
+"4","Arturo Vidal",31,"MF","Bayern Munich",-1,"Chile",2018
+"5","Jean-Clair Todibo",19,"DF","Toulouse",NA,"France",2018

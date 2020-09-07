@@ -1,7 +1,7 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Seydou Keita",32,"MF","Dalian Aerbin",0,"Mali"
-"2","Ibrahim Afellay",26,"FW","Schalke 04",0,"Netherlands"
-"3","Andreu Fontas",22,"CB","Mallorca",0,"Spain"
-"4","Keirrison",23,"FW","Coritiba",0,"Brazil"
-"5","Henrique",25,"DF","Palmeiras",0,"Brazil"
-"6","Isaac Cuenca",21,"FW","Ajax",0,"Spain"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Seydou Keita",32,"MF","Dalian Aerbin",0,"Mali",2012
+"2","Ibrahim Afellay",26,"FW","Schalke 04",0,"Netherlands",2012
+"3","Andreu Fontas",22,"CB","Mallorca",0,"Spain",2012
+"4","Keirrison",23,"FW","Coritiba",0,"Brazil",2012
+"5","Henrique",25,"DF","Palmeiras",0,"Brazil",2012
+"6","Isaac Cuenca",21,"FW","Ajax",0,"Spain",2012

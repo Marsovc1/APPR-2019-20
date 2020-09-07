@@ -1,10 +1,10 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Eric Abidal",33,"LB","Monaco",0,"France"
-"2","Andreu Fontas",23,"CB","Celta Vigo",1,"Spain"
-"3","Marc Muniesa",21,"CB","Stoke City",0,"Spain"
-"4","Keirrison",24,"FW","Coritiba",0,"Brazil"
-"5","Bojan Krkiæ",22,"FW","Ajax",0,"Spain"
-"6","David Villa",31,"FW","Atlético Madrid",5,"Spain"
-"7","Gerard Deulofeu",19,"FW","Everton",0,"Spain"
-"8","Thiago",22,"CM","Bayern Munich",25,"Spain"
-"9","Rafinha",20,"CM","Celta Vigo",0,"Brazil"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Eric Abidal",33,"LB","Monaco",0,"France",2013
+"2","Andreu Fontas",23,"CB","Celta Vigo",NA,"Spain",2013
+"3","Marc Muniesa",21,"CB","Stoke City",0,"Spain",2013
+"4","Keirrison",24,"FW","Coritiba",0,"Brazil",2013
+"5","Bojan Krkiæ",22,"FW","Ajax",0,"Spain",2013
+"6","David Villa",31,"FW","Atlético Madrid",NA,"Spain",2013
+"7","Gerard Deulofeu",19,"FW","Everton",0,"Spain",2013
+"8","Thiago",22,"CM","Bayern Munich",NA,"Spain",2013
+"9","Rafinha",20,"CM","Celta Vigo",0,"Brazil",2013

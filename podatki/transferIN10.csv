@@ -1,11 +1,11 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Martín Cáceres",23,"DF","Juventus",0,"Uruguay"
-"2","Alexander Hleb",29,"MF","VfB Stuttgart",0,"Belarus"
-"3","Víctor Sánchez",23,"MF","Xerez",0,"Spain"
-"4","Keirrison",21,"FW","Fiorentina",0,"Brazil"
-"5","Henrique",24,"DF","Racing Santander",0,"Brazil"
-"6","David Villa",28,"FW","Valencia",40,"Spain"
-"7","Javier Mascherano",26,"MF","Liverpool",19,"Argentina"
-"8","Adriano",26,"DF","Sevilla",9.5,"Brazil"
-"9","Ibrahim Afellay",24,"MF","PSV",3,"Netherlands"
-"10","Jeffrén",23,"LW","Barcelona B",0,"Venezuela"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Martín Cáceres",23,"DF","Juventus",0,"Uruguay",2010
+"2","Alexander Hleb",29,"MF","VfB Stuttgart",0,"Belarus",2010
+"3","Víctor Sánchez",23,"MF","Xerez",0,"Spain",2010
+"4","Keirrison",21,"FW","Fiorentina",0,"Brazil",2010
+"5","Henrique",24,"DF","Racing Santander",0,"Brazil",2010
+"6","David Villa",28,"FW","Valencia",NA,"Spain",2010
+"7","Javier Mascherano",26,"MF","Liverpool",NA,"Argentina",2010
+"8","Adriano",26,"DF","Sevilla",NA,"Brazil",2010
+"9","Ibrahim Afellay",24,"MF","PSV",NA,"Netherlands",2010
+"10","Jeffrén",23,"LW","Barcelona B",0,"Venezuela",2010

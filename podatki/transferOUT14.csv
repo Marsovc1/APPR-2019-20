@@ -1,16 +1,16 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Víctor Valdés",32,"GK","Manchester United",0,"Spain"
-"2","Carles Puyol",36,"DF","",0,"Spain"
-"3","José Manuel Pinto",38,"GK","",0,"Spain"
-"4","Cesc Fabregas",27,"MF","Chelsea",33,"Spain"
-"5","Denis Suárez",20,"MF","Sevilla",0,"Spain"
-"6","Jonathan dos Santos",24,"MF","Villarreal",1.5,"Mexico"
-"7","Isaac Cuenca",23,"FW","Deportivo La Coruna",0,"Spain"
-"8","Alexis Sánchez",25,"FW","Arsenal",42.5,"Chile"
-"9","Oier",24,"GK","Granada",0,"Spain"
-"10","Keirrison",25,"FW","Coritiba",0,"Brazil"
-"11","Cristian Tello",22,"FW","Porto",10,"Spain"
-"12","Bojan",23,"FW","Stoke City",1.8,"Spain"
-"13","Ibrahim Afellay",28,"FW","Olympiacos",0,"Netherlands"
-"14","Gerard Deulofeu",20,"FW","Sevilla",0,"Spain"
-"15","Alex Song",26,"MF","West Ham",0,"Cameroon"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Víctor Valdés",32,"GK","Manchester United",0,"Spain",2014
+"2","Carles Puyol",36,"DF","",0,"Spain",2014
+"3","José Manuel Pinto",38,"GK","",0,"Spain",2014
+"4","Cesc Fabregas",27,"MF","Chelsea",NA,"Spain",2014
+"5","Denis Suárez",20,"MF","Sevilla",0,"Spain",2014
+"6","Jonathan dos Santos",24,"MF","Villarreal",NA,"Mexico",2014
+"7","Isaac Cuenca",23,"FW","Deportivo La Coruna",0,"Spain",2014
+"8","Alexis Sánchez",25,"FW","Arsenal",NA,"Chile",2014
+"9","Oier",24,"GK","Granada",0,"Spain",2014
+"10","Keirrison",25,"FW","Coritiba",0,"Brazil",2014
+"11","Cristian Tello",22,"FW","Porto",NA,"Spain",2014
+"12","Bojan",23,"FW","Stoke City",NA,"Spain",2014
+"13","Ibrahim Afellay",28,"FW","Olympiacos",0,"Netherlands",2014
+"14","Gerard Deulofeu",20,"FW","Sevilla",0,"Spain",2014
+"15","Alex Song",26,"MF","West Ham",0,"Cameroon",2014

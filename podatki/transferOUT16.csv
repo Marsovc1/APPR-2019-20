@@ -1,14 +1,14 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Sandro Ramírez",20,"FW","Málaga",0,"Spain"
-"2","Dani Alves",33,"DF","Juventus",0,"Brazil"
-"3","Marc Bartra",25,"CB","Borussia Dortmund",8,"Spain"
-"4","Alen Haliloviæ",20,"MF","Hamburg",5,"Croatia"
-"5","Adriano",35,"DF","Beºiktaº",0.6,"Brazil"
-"6","Martín Montoya",25,"DF","Valencia",0,"Spain"
-"7","Alex Song",32,"MF","Rubin Kazan",0,"Cameroon"
-"8","Thomas Vermaelen",34,"DF","Roma",0,"Belgium"
-"9","Cristian Tello",29,"FW","Fiorentina",0,"Spain"
-"10","Claudio Bravo",37,"GK","Manchester City",20,"Chile"
-"11","Sergi Samper",25,"MF","Granada",0,"Spain"
-"12","Douglas",29,"DF","Sporting Gijón",0,"Brazil"
-"13","Munir El Haddadi",24,"FW","Valencia",0,"Spain"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Sandro Ramírez",20,"FW","Málaga",0,"Spain",2016
+"2","Dani Alves",33,"DF","Juventus",0,"Brazil",2016
+"3","Marc Bartra",25,"CB","Borussia Dortmund",NA,"Spain",2016
+"4","Alen Haliloviæ",20,"MF","Hamburg",NA,"Croatia",2016
+"5","Adriano",35,"DF","Beºiktaº",NA,"Brazil",2016
+"6","Martín Montoya",25,"DF","Valencia",0,"Spain",2016
+"7","Alex Song",32,"MF","Rubin Kazan",0,"Cameroon",2016
+"8","Thomas Vermaelen",34,"DF","Roma",0,"Belgium",2016
+"9","Cristian Tello",29,"FW","Fiorentina",0,"Spain",2016
+"10","Claudio Bravo",37,"GK","Manchester City",NA,"Chile",2016
+"11","Sergi Samper",25,"MF","Granada",0,"Spain",2016
+"12","Douglas",30,"DF","Sporting Gijón",0,"Brazil",2016
+"13","Munir El Haddadi",24,"FW","Valencia",0,"Spain",2016

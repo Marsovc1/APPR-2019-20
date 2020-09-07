@@ -1,8 +1,8 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Ibrahim Afellay",29,"MF","Olympiacos",0,"Netherlands"
-"2","Alex Song",27,"MF","West Ham United",0,"Cameroon"
-"3","Aleix Vidal",25,"DF","Sevilla",22,"Spain"
-"4","Arda Turan",28,"MF","Atlético Madrid",41,"Turkey"
-"5","Denis Suárez",21,"MF","Sevilla",0,"Spain"
-"6","Cristian Tello",24,"FW","Porto",0,"Spain"
-"7","Martín Montoya",24,"DF","Internazionale",0,"Spain"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Ibrahim Afellay",29,"MF","Olympiacos",0,"Netherlands",2015
+"2","Alex Song",27,"MF","West Ham United",0,"Cameroon",2015
+"3","Aleix Vidal",25,"DF","Sevilla",NA,"Spain",2015
+"4","Arda Turan",28,"MF","Atlético Madrid",NA,"Turkey",2015
+"5","Denis Suárez",21,"MF","Sevilla",0,"Spain",2015
+"6","Cristian Tello",24,"FW","Porto",0,"Spain",2015
+"7","Martín Montoya",24,"DF","Internazionale",0,"Spain",2015

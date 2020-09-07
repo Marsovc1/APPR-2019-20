@@ -1,14 +1,14 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Emerson",NA,"DF","Real Betis",6,"Brazil"
-"2","Marc Cardona",NA,"FW","Osasuna",2.5,"Spain"
-"3","André Gomes",NA,"MF","Everton",25,"Portugal"
-"4","Marc Cucurella",NA,"DF","Eibar",2,"Spain"
-"5","Denis Suárez",NA,"MF","Celta Vigo",12.9,"Spain"
-"6","Thomas Vermaelen",NA,"DF","Vissel Kobe",0,"Belgium"
-"7","Douglas",NA,"DF","Beºiktaº",0,"Brazil"
-"8","Jasper Cillessen",NA,"GK","Valencia",35,"Netherlands"
-"9","Jeison Murillo",NA,"DF","Valencia",0,"Colombia"
-"10","Kevin-Prince Boateng",NA,"FW","Sassuolo",0,"Ghana"
-"11","Sergi Palencia",NA,"DF","Saint-Étienne",2,"Spain"
-"12","Adrián Ortolá",NA,"GK","Tenerife",-1,"Spain"
-"13","Malcom",22,"FW","Zenit Saint Petersburg",40,"Brazil"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Emerson",NA,"DF","Real Betis",NA,"Brazil",2019
+"2","Marc Cardona",NA,"FW","Osasuna",NA,"Spain",2019
+"3","André Gomes",NA,"MF","Everton",NA,"Portugal",2019
+"4","Marc Cucurella",NA,"DF","Eibar",NA,"Spain",2019
+"5","Denis Suárez",NA,"MF","Celta Vigo",NA,"Spain",2019
+"6","Thomas Vermaelen",NA,"DF","Vissel Kobe",0,"Belgium",2019
+"7","Douglas",NA,"DF","Beºiktaº",0,"Brazil",2019
+"8","Jasper Cillessen",NA,"GK","Valencia",NA,"Netherlands",2019
+"9","Jeison Murillo",NA,"DF","Valencia",0,"Colombia",2019
+"10","Kevin-Prince Boateng",NA,"FW","Sassuolo",0,"Ghana",2019
+"11","Sergi Palencia",NA,"DF","Saint-Étienne",NA,"Spain",2019
+"12","Adrián Ortolá",NA,"GK","Tenerife",-1,"Spain",2019
+"13","Malcom",22,"FW","Zenit Saint Petersburg",NA,"Brazil",2019

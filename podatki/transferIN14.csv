@@ -1,10 +1,10 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Marc-André ter Stegen",22,"GK","Mönchengladbach",12,"Germany"
-"2","Gerard Deulofeu",20,"FW","Everton",0,"Spain"
-"3","Rafinha",21,"MF","Celta Vigo",0,"Brazil"
-"4","Ivan Rakitiæ",26,"MF","Sevilla",18,"Croatia"
-"5","Claudio Bravo",31,"GK","Real Sociedad",12,"Chile"
-"6","Luis Suárez",27,"FW","Liverpool",81.25,"Uruguay"
-"7","Jérémy Mathieu",30,"DF","Valencia",20,"France"
-"8","Thomas Vermaelen",28,"DF","Arsenal",18,"Belgium"
-"9","Douglas",24,"RB","Sao Paulo",4,"Brazil"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Marc-André ter Stegen",22,"GK","Mönchengladbach",NA,"Germany",2014
+"2","Gerard Deulofeu",20,"FW","Everton",0,"Spain",2014
+"3","Rafinha",21,"MF","Celta Vigo",0,"Brazil",2014
+"4","Ivan Rakitiæ",26,"MF","Sevilla",NA,"Croatia",2014
+"5","Claudio Bravo",31,"GK","Real Sociedad",NA,"Chile",2014
+"6","Luis Suárez",27,"FW","Liverpool",NA,"Uruguay",2014
+"7","Jérémy Mathieu",30,"DF","Valencia",NA,"France",2014
+"8","Thomas Vermaelen",28,"DF","Arsenal",NA,"Belgium",2014
+"9","Douglas",24,"RB","Sao Paulo",NA,"Brazil",2014

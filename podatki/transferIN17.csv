@@ -1,13 +1,13 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Douglas",26,"DF","Sporting Gijón",0,"Brazil"
-"2","Thomas Vermaelen",31,"DF","Roma",0,"Belgium"
-"3","Sergi Samper",22,"MF","Granada",0,"Spain"
-"4","Munir",21,"FW","Valencia",0,"Spain"
-"5","Marlon Santos",21,"DF","Fluminense",5,"Brazil"
-"6","Gerard Deulofeu",23,"FW","Everton",12,"Spain"
-"7","Nélson Semedo",23,"DF","Benfica",30,"Portugal"
-"8","Paulinho",29,"MF","Guangzhou Evergrande",40,"Brazil"
-"9","Ousmane Dembélé",20,"FW","Borussia Dortmund",145,"France"
-"10","Philippe Coutinho",25,"MF","Liverpool",160,"Brazil"
-"11","Yerry Mina",23,"DF","Palmeiras",11.8,"Colombia"
-"12","Sergi Samper",23,"MF","Las Palmas",0,"Spain"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Douglas",26,"DF","Sporting Gijón",0,"Brazil",2017
+"2","Thomas Vermaelen",31,"DF","Roma",0,"Belgium",2017
+"3","Sergi Samper",22,"MF","Granada",0,"Spain",2017
+"4","Munir",21,"FW","Valencia",0,"Spain",2017
+"5","Marlon Santos",21,"DF","Fluminense",NA,"Brazil",2017
+"6","Gerard Deulofeu",23,"FW","Everton",NA,"Spain",2017
+"7","Nélson Semedo",23,"DF","Benfica",NA,"Portugal",2017
+"8","Paulinho",29,"MF","Guangzhou Evergrande",NA,"Brazil",2017
+"9","Ousmane Dembélé",20,"FW","Borussia Dortmund",NA,"France",2017
+"10","Philippe Coutinho",25,"MF","Liverpool",NA,"Brazil",2017
+"11","Yerry Mina",23,"DF","Palmeiras",NA,"Colombia",2017
+"12","Sergi Samper",23,"MF","Las Palmas",0,"Spain",2017

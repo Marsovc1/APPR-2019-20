@@ -1,5 +1,7 @@
 # 2. faza: Uvoz podatkov
 
+options(warn=-1)
+
 library(dplyr)
 library(rvest)
 library(magrittr)
@@ -250,12 +252,13 @@ uvoz <- function(i){
     tabelaOUT$`Vrednost transferja` <- vredOUT
   }
   
-  pathIN = file.path("C:", "Users", "marsovc", "Documents", "Analiza Transferjev FC Barcelona", "podatki", paste0('transferIN',i,'.csv'))
-  pathOUT = file.path("C:", "Users", "marsovc", "Documents", "Analiza Transferjev FC Barcelona", "podatki", paste0('transferOUT',i,'.csv'))
+  tabelaIN$`Leto` <- rep(2000+i, nrow(tabelaIN))
+  tabelaOUT$`Leto` <- rep(2000+i, nrow(tabelaOUT))
+  
+  pathIN = paste0("./podatki/",'transferIN',i,'.csv')
+  pathOUT = paste0("./podatki/",'transferOUT',i,'.csv')
   write.csv(tabelaIN,pathIN, row.names = TRUE)
   write.csv(tabelaOUT,pathOUT, row.names = TRUE)
-  
-  
 }
 
 #funkcijo izvedemo za leta 10-11,...,19-20

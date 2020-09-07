@@ -1,10 +1,10 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Cesc Fabregas",24,"MF","Arsenal",34,"Spain"
-"2","Alexis Sánchez",22,"FW","Udinese",26,"Chile"
-"3","Alexander Hleb",30,"MF","Birmingham",0,"Belarus"
-"4","Alexander Hleb",30,"MF","VfL Wolfsburg",0,"Belarus"
-"5","Henrique",24,"DF","Racing Santander",0,"Brazil"
-"6","Keirrison",22,"FW","Santos",0,"Brazil"
-"7","Keirrison",23,"FW","Cruzeiro",0,"Brazil"
-"8","Víctor Sánchez",23,"MF","Getafe",0,"Spain"
-"9","Martín Cáceres",24,"DF","Sevilla",0,"Uruguay"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Cesc Fabregas",24,"MF","Arsenal",NA,"Spain",2011
+"2","Alexis Sánchez",22,"FW","Udinese",NA,"Chile",2011
+"3","Alexander Hleb",30,"MF","Birmingham",0,"Belarus",2011
+"4","Alexander Hleb",30,"MF","VfL Wolfsburg",0,"Belarus",2011
+"5","Henrique",24,"DF","Racing Santander",0,"Brazil",2011
+"6","Keirrison",22,"FW","Santos",0,"Brazil",2011
+"7","Keirrison",23,"FW","Cruzeiro",0,"Brazil",2011
+"8","Víctor Sánchez",23,"MF","Getafe",0,"Spain",2011
+"9","Martín Cáceres",24,"DF","Sevilla",0,"Uruguay",2011

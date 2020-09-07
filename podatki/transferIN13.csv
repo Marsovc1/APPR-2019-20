@@ -1,9 +1,9 @@
-"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo"
-"1","Neymar",21,"FW","Santos",57.1,"Brazil"
-"2","Ibrahim Afellay",27,"FW","Schalke 04",0,"Netherlands"
-"3","Isaac Cuenca",22,"FW","Ajax",0,"Spain"
-"4","Sergi Roberto",21,"MF","Barcelona B",0,"Spain"
-"5","Oier Olazábal",23,"GK","Barcelona B",0,"Spain"
-"6","Rafinha",20,"CM","Barcelona B",0,"Brazil"
-"7","Gerard Deulofeu",19,"FW","Barcelona B",0,"Spain"
-"8","Bojan",22,"FW","Roma",13,"Spain"
+"","Ime","Starost","Polozaj","Klub","Vrednost transferja","Drzavljanstvo","Leto"
+"1","Neymar",21,"FW","Santos",NA,"Brazil",2013
+"2","Ibrahim Afellay",27,"FW","Schalke 04",0,"Netherlands",2013
+"3","Isaac Cuenca",22,"FW","Ajax",0,"Spain",2013
+"4","Sergi Roberto",21,"MF","Barcelona B",0,"Spain",2013
+"5","Oier Olazábal",23,"GK","Barcelona B",0,"Spain",2013
+"6","Rafinha",20,"CM","Barcelona B",0,"Brazil",2013
+"7","Gerard Deulofeu",19,"FW","Barcelona B",0,"Spain",2013
+"8","Bojan",22,"FW","Roma",NA,"Spain",2013
