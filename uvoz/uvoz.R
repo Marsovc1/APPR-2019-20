@@ -69,13 +69,13 @@ uvozRD <- function(i){
     RD <- html_text(RD)
     rodIN[i] <- RD
   }
-  for (i in length(linkOUT)){
+  for (i in seq(1,length(linkOUT),1)){
     linkRD <- paste0('https://en.wikipedia.org',linkOUT[i])
     stranRD <- html_session(linkRD) %>% read_html()
-
     RD <- stranRD %>% html_nodes(xpath="//table[@class='infobox vcard']") %>% .[[1]]
     RD <- RD %>% html_nodes(xpath="//span[@class='bday']")
     RD <- html_text(RD)
+    
     rodOUT[i] <- RD
   }
   return(list(rodIN,rodOUT))
@@ -176,7 +176,6 @@ uvoz <- function(i){
     
     tabelaIN$`Vrednost transferja` <- (as.numeric(tabelaIN$`Vrednost transferja`)/1000000)
     tabelaOUT$`Vrednost transferja` <- (as.numeric(tabelaOUT$`Vrednost transferja`)/1000000)
-    print(tabelaOUT$`Vrednost transferja`)
   }
   
   else{
@@ -206,7 +205,7 @@ uvoz <- function(i){
     names(tabelaOUT) <- names
     
     #posebno ciscenje za vrednosti transferjev: crka -> '', + -> ' ', € -> '', \ -> ''
-    tabelaIN$`Vrednost transferja` <- gsub("Undisclosed",'-1',tabelaIN$`Vrednost transferja`)
+    tabelaIN$`Vrednost transferja` <- gsub("Undisclosed",'0',tabelaIN$`Vrednost transferja`)
     tabelaIN$`Vrednost transferja` <- gsub("[[:punct:]]\\d+[[:punct:]]",'',tabelaIN$`Vrednost transferja`)
     tabelaIN$`Vrednost transferja` <- gsub("\\[|\\]",'',tabelaIN$`Vrednost transferja`)
     tabelaIN$`Vrednost transferja` <- gsub("[[:alpha:]]",'',tabelaIN$`Vrednost transferja`)
@@ -215,7 +214,7 @@ uvoz <- function(i){
     tabelaIN$`Vrednost transferja` <- gsub("/",'',tabelaIN$`Vrednost transferja`)
     tabelaIN$`Vrednost transferja` <- gsub(" ",'',tabelaIN$`Vrednost transferja`)
     
-    tabelaOUT$`Vrednost transferja` <- gsub("Undisclosed",'-1',tabelaOUT$`Vrednost transferja`)
+    tabelaOUT$`Vrednost transferja` <- gsub("Undisclosed",'0',tabelaOUT$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub("[[:punct:]]\\d+[[:punct:]]",'',tabelaOUT$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub("\\[|\\]",'',tabelaOUT$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub("[[:alpha:]]",'',tabelaOUT$`Vrednost transferja`)
