@@ -138,7 +138,19 @@ drzave_odhodi_vrednost<- drzave_odhodi_vrednost[ , order(names(drzave_odhodi_vre
 
 #skupna potrošnja po državah
 
+#transponiramo dfje
 
+drzave_odhodi <- t(drzave_odhodi)
+drzave_prihodi <- t(drzave_prihodi)
+
+colnames(drzave_odhodi) <- head(drzave_odhodi,1)
+colnames(drzave_prihodi) <- head(drzave_prihodi,1)
+
+drzave_odhodi <- drzave_odhodi[-1,]
+drzave_prihodi <- drzave_prihodi[-1,]
+
+drzave_odhodi_vrednost <- t(drzave_odhodi_vrednost)
+drzave_prihodi_vrednost <- t(drzave_prihodi_vrednost)
 
 #=================================================================
 #shranimo izluščene/'analizirane' podatke v CSV-je
