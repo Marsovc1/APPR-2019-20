@@ -69,5 +69,11 @@ polozaj_stevilo_odhod_plot <- ggplot(polozaj_odhod_stevilo, aes(x=X,y=value,colo
 
 drzave_prihodi <- read.csv("./analiza/drzave_prihodi.csv")
 
+source("./lib/uvozi.zemljevid.r")
+zemljevid <- uvozi.zemljevid("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip", "ne_110m_admin_0_countries", pot.zemljevida="", encoding="UTF-8")%>% fortify()
 
+require(ggplot2)
+x <- ggplot() + geom_path(data=zemljevid, aes(x=long, y = lat, group = group))
+print(x)
 
+#drzave_prihodi <- drzave_prihodi %>% rename(SOVEREIGNT = X)
