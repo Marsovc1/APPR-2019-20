@@ -35,7 +35,7 @@ V projektni nalogi sem analiziral prestope kluba FC Barcelona za obdobje 2010/11
 # Obdelava, uvoz in čiščenje podatkov
 
 ```{r uvoz, echo=FALSE, message=FALSE}
-source("uvoz/uvoz.r", encoding="UTF-8")
+source("uvoz/uvoz.R", encoding="UTF-8")
 ```
 
 Uvozil sem podatke o prestopih s pomočjo knjižnic dplyr, rvest in magrittr iz tabel na strani wikipedia (primer vira za 2010/11: https://en.wikipedia.org/wiki/2010-11_FC_Barcelona_season#Players_in_/_out).
