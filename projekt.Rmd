@@ -84,16 +84,6 @@ Ustvaril sem 7 tabel (nekatere so simetrične/analogne):
 
 **Opomba**: da bi bila razpredelnica `prestopi` v obliki *tidy data*, bi moral odstraniti stolpca `Povprecna_vrednost_prihoda` in `Povprecna_vrednost_odhoda`, saj sta izpeljana iz stolpcov `Število_prihodov` in `Skupna_vrednost_prihodov` oziroma `Število_odhodov` in `Skupna_vrednost_odhodov`.
 
-Spodnji graf prikazuje skupno vrednost prestopov (modra Prihodi, rdeča Odhodi).
-
-```{r path, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
-prestopi_skupna_plot <- ggplot(prestopi_skupna, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
-  geom_point()+xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
-  scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
-```
-
-Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 2017 (ta je označen z vertikalno črto).
-
 ***
 
 # Analiza in vizualizacija podatkov
@@ -102,12 +92,23 @@ Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
-Spodnji zemljevid prikazuje povprečno velikost družine za vsako občino.
+Spodnji graf prikazuje skupno vrednost prestopov (modra Prihodi, rdeča Odhodi).
+Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 2017 (ta je označen z vertikalno črto).
 
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini', warning=FALSE}
-tm_shape(merge(zemljevid, povprecja, by.x="OB_UIME", by.y="obcina")) +
-  tm_polygons("povprecje", title="Povprečje") +
-  tm_layout(title="Povprečno število otrok v družini")
+```{r graf_skupna, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
+plot(prestopi_skupna_plot)
+```
+
+Spodnji graf prikazuje povprečno starost igralcev, tu se osredotočimo na to da so odhodi večinoma starejši
+
+```{r graf_starost, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
+plot(prestopi_starost_plot)
+```
+
+Spodnji zemljevid prikazuje število vseh prestopov za posamezne države v zadnjih desetih letih.
+
+```{r zemljevid_vsi, echo=FALSE, fig.align='center', fig.cap='Zemljevid števila prestopov za države', warning=FALSE}
+plot(map_vsi)
 ```
 
 ***
@@ -115,19 +116,15 @@ tm_shape(merge(zemljevid, povprecja, by.x="OB_UIME", by.y="obcina")) +
 # Napredna analiza podatkov
 
 ```{r analiza, echo=FALSE, message=FALSE}
-source("analiza/analiza.r", encoding="UTF-8")
+source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
-Spodnji graf prikazuje povezavo med številom naselij in površino občine.
+Tu se osredotočimo na gibanje skupne vredno sti prihodov in odhodov skozi čas, predvsem kako se razlika skupne vrednosti prihodov in odhodov povečuje (ta se vidi v koeficientu X funkcije lm(); večji X pomeni večji naklon -> naši vrednosti sta: 25.10606 in 13.29909). 
 
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-ggplot(inner_join(obcine, data.frame(obcina=names(skupine),
-                                     skupina=factor(skupine)), by="obcina")
-, aes(x=povrsina, y=naselja, color=skupina, size=prebivalci/1000)) + geom_point() +
-  ggtitle("Število naselij glede na površino občine") +
-  xlab(expression("Površina (km"^2 * ")")) + ylab("Št. naselij") +
-  guides(color=guide_legend(title="Skupina"),
-         size=guide_legend(title="Prebivalci (* 1000)"))
+```{r graf, echo=FALSE, fig.align='center', fig.cap='Naraščanje razlike skupnih vrednosti in napoved za 2021'}
+plot(prestopi_skupna_prihod_plot)
+plot(prestopi_skupna_odhod_plot)
+print(c(napoved_prihod$coefficients['X'],napoved_odhod$coefficients['X']))
 ```
 
 ***

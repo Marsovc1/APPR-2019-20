@@ -32,14 +32,36 @@ prestopi_starost_plot <- ggplot(prestopi_starost, aes(x=X,y=value,colour = varia
   geom_point()+xlab("Leto")+ylab("Povprečna starost prestopov")+
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
-prestopi_skupna <- prestopi %>% select(X,Skupna_vrednost_prihodov,Skupna_vrednost_odhodov)
-prestopi_skupna <- reshape2::melt(prestopi_skupna, id.var = 'X')
+prestopi_skupna_prihod <- prestopi %>% select(X,Skupna_vrednost_prihodov)
+prestopi_skupna_odhod <- prestopi %>% select(X,Skupna_vrednost_odhodov)
 
-prestopi_skupna_plot <- ggplot(prestopi_skupna, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
-  geom_point()+xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
-  scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
+#========================================================================================================
+#napredna analiza napoved
+leta <- data.frame(X=seq(2020,2022,1))
 
-plot(prestopi_skupna_plot)
+napoved_prihod <- lm(data=prestopi_skupna_prihod,prestopi_skupna_prihod$Skupna_vrednost_prihodov ~ X)
+napoved_vrednost_prihod <- mutate(leta, Skupna_vrednost_prihodov=predict(napoved_prihod, leta))
+
+napoved_odhod <- lm(data=prestopi_skupna_odhod,prestopi_skupna_odhod$Skupna_vrednost_odhodov ~ X)
+napoved_vrednost_odhod <- mutate(leta, Skupna_vrednost_odhodov=predict(napoved_odhod, leta))
+
+prestopi_skupna_prihod_plot <- ggplot(prestopi_skupna_prihod, aes(x=X,y=Skupna_vrednost_prihodov,colour = 'Blue'))+geom_path(size = 1)+
+  geom_smooth(method = lm, color="#ffff00",se=FALSE,size=1.2)+geom_point()+
+  geom_point(data=napoved_vrednost_prihod, aes(x=X,y=Skupna_vrednost_prihodov,colour='Green'))+
+  scale_x_continuous('Leto', breaks=seq(2010, 2022, 1), limits=c(2010, 2022))+
+  xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
+  scale_color_manual(name = "Vrednost prestopov", labels = c('Prihodi','Napoved'),values=c('Blue','Green'))
+
+prestopi_skupna_odhod_plot <- ggplot(prestopi_skupna_odhod, aes(x=X,y=Skupna_vrednost_odhodov,colour = 'Red'))+geom_path(size = 1)+
+  geom_smooth(method = lm, color="Blue",se=FALSE,size=1.2)+geom_point()+
+  geom_point(data=napoved_vrednost_odhod, aes(x=X,y=Skupna_vrednost_odhodov,colour='Green'))+
+  scale_x_continuous('Leto', breaks=seq(2010, 2022, 1), limits=c(2010, 2022))+
+  xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
+  scale_color_manual(name = "Vrednost prestopov", labels = c('Napoved','Odhodi'),values=c('Green','Red'))
+
+#print(c(napoved_prihod$coefficients,napoved_odhod$coefficients))
+#plot(prestopi_skupna_prihod_plot)
+#plot(prestopi_skupna_odhod_plot)
 #================================================================================================
 #polozaj prestopov
 
