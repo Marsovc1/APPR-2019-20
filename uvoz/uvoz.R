@@ -254,8 +254,8 @@ uvoz <- function(i){
   tabelaIN$`Leto` <- rep(2000+i, nrow(tabelaIN))
   tabelaOUT$`Leto` <- rep(2000+i, nrow(tabelaOUT))
   
-  pathIN = paste0("./podatki/",'transferIN',i,'.csv')
-  pathOUT = paste0("./podatki/",'transferOUT',i,'.csv')
+  pathIN = paste0("podatki/",'transferIN',i,'.csv')
+  pathOUT = paste0("podatki/",'transferOUT',i,'.csv')
   write.csv(tabelaIN,pathIN, row.names = TRUE)
   write.csv(tabelaOUT,pathOUT, row.names = TRUE)
 }

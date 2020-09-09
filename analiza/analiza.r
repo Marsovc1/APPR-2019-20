@@ -3,14 +3,14 @@ library("tidyverse")
 
 #=================================================================
 #uvozim in zdruzim tabele
-prihod <- read.csv(file = file.path('~','Analiza Transferjev FC Barcelona','podatki','transferIN10.csv'))
+prihod <- read.csv(file = file.path('podatki','transferIN10.csv'))
 for (i in 11:19){
-  prihod <- rbind(prihod, read.csv(file = file.path('~','Analiza Transferjev FC Barcelona','podatki',paste0('transferIN',i,'.csv'))))
+  prihod <- rbind(prihod, read.csv(file = file.path('podatki',paste0('transferIN',i,'.csv'))))
 }
 
-odhod <- read.csv(file = file.path('~','Analiza Transferjev FC Barcelona','podatki','transferOUT10.csv'))
+odhod <- read.csv(file = file.path('podatki','transferOUT10.csv'))
 for (i in 11:19){
-  odhod <- rbind(odhod, read.csv(file = file.path('~','Analiza Transferjev FC Barcelona','podatki',paste0('transferOUT',i,'.csv'))))
+  odhod <- rbind(odhod, read.csv(file = file.path('podatki',paste0('transferOUT',i,'.csv'))))
 }
 
 #=================================================================
@@ -176,7 +176,7 @@ drzave_odhodi_vrednost <- tibble::rownames_to_column(drzave_odhodi_vrednost, "Dr
 #=================================================================
 #shranimo izluscene/'analizirane' podatke v CSV-je
 
-path = "./analiza/"
+path = "analiza/"
 
 write.csv(drzave_odhodi,paste0(path,'drzave_odhodi.csv'), row.names = TRUE)
 write.csv(drzave_prihodi,paste0(path,'drzave_prihodi.csv'), row.names = TRUE)

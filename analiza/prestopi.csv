@@ -1,4 +1,4 @@
-"","Število_prihodov","Število_odhodov","Povprecna_vrednost_prihoda","Povprecna_vrednost_odhoda","Povprecna_starost_prihoda","Povprecna_starost_odhoda","Skupna_vrednost_prihodov","Skupna_vrednost_odhodov"
+"","stevilo_prihodov","stevilo_odhodov","Povprecna_vrednost_prihoda","Povprecna_vrednost_odhoda","Povprecna_starost_prihoda","Povprecna_starost_odhoda","Skupna_vrednost_prihodov","Skupna_vrednost_odhodov"
 "2010",10,10,7.15,6.75,24.7,26.4,71.5,67.5
 "2011",9,11,6.67,2.07,24.7,25.4,60,22.75
 "2012",2,6,16.5,0,23.5,24.8,33,0
@@ -7,5 +7,5 @@
 "2015",7,10,9,5.3,25.4,24.7,63,53
 "2016",9,13,16.75,2.58,23,28.4,150.75,33.6
 "2017",12,12,33.65,19.38,23.9,26.8,403.8,232.5
-"2018",5,10,21.58,10.1,23,25.8,107.9,101
-"2019",7,13,39,9.57,24.1,25.6,273,124.4
+"2018",5,10,21.78,10.2,23,25.8,108.9,102
+"2019",7,13,39,9.65,24.1,25.6,273,125.4
