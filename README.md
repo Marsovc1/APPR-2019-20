@@ -16,7 +16,7 @@ Cilj je analizirati podatke kot so:
 * Pozicija na igrišču (katera vloga na igrišču je "bolj iskana" v klubu)
 
 VIR: Podatke bom dobil iz tabel na wikipedii na straneh oblike: https://en.wikipedia.org/wiki/"sezona"_FC_Barcelona_season.
-Podatke (html tabele) bom prek paketa XML spremenil v R-prijazne tabele in jih po potrebi uredil, glede na podatke, ki jih potrebujem.
+Podatke (html tabele) bom prek paketa dplyr in rvest spremenil v R-prijazne tabele in jih po potrebi uredil, glede na podatke, ki jih potrebujem.
 
 ## Program
 
