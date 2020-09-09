@@ -93,13 +93,13 @@ source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
 Spodnji graf prikazuje skupno vrednost prestopov (modra Prihodi, rdeča Odhodi).
-Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 2017 (ta je označen z vertikalno črto).
+Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 2017 (ta je označen z vertikalno črto na x=2017).
 
 ```{r graf_skupna, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
 plot(prestopi_skupna_plot)
 ```
 
-Spodnji graf prikazuje povprečno starost igralcev, tu se osredotočimo na to da so odhodi večinoma starejši
+Spodnji graf prikazuje povprečno starost igralcev, tu se osredotočimo na to da so odhodi večinoma res starejši od prihodov.
 
 ```{r graf_starost, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
 plot(prestopi_starost_plot)
@@ -119,7 +119,8 @@ plot(map_vsi)
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
-Tu se osredotočimo na gibanje skupne vredno sti prihodov in odhodov skozi čas, predvsem kako se razlika skupne vrednosti prihodov in odhodov povečuje (ta se vidi v koeficientu X funkcije lm(); večji X pomeni večji naklon -> naši vrednosti sta: 25.10606 in 13.29909). 
+Tu se osredotočimo na gibanje skupne vredno sti prihodov in odhodov skozi čas, predvsem kako se razlika skupne vrednosti prihodov in odhodov povečuje (ta se vidi v koeficientu X funkcije lm(); večji X pomeni večji naklon -> naši vrednosti sta: 25.10606 in 13.29909).
+S pomočjo funkcije lm() sem napovedal vrednosti prestopov za sezone 2020-21, 2021-22 in 2022-23. Ta napoved se zanaša na ohranjanje trenda, ki pa se ne zdi verjeten v luči dogajanja.
 
 ```{r graf, echo=FALSE, fig.align='center', fig.cap='Naraščanje razlike skupnih vrednosti in napoved za 2021'}
 plot(prestopi_skupna_prihod_plot)
@@ -128,7 +129,20 @@ print(c(napoved_prihod$coefficients['X'],napoved_odhod$coefficients['X']))
 ```
 
 ***
+V shiny-ju sem naredil interaktivni zemljevid, ki nam kaže število prestopov za države glede na posamezna leta.
 
 ```{r shiny, echo=FALSE}
 shinyAppDir("shiny", options=list(width="100%", height=600))
 ```
+
+***
+
+# Zaključek
+
+V analizi sem se predvsem zanimal za tri področja prestopov: Cena prestopov in vpliv prestopa Neymarja, 
+število prestopov za posamezno državo in povprečno starost prestopov.
+Dognanja:
+
+* Cene za opazovano obdobje naraščajo za oba tipa prestopov, mogoče ne vedno, a na celotnem intervalu. Neymarjev prestop v PSG leta 2017 je povzročil velik dohodek in še večji odhodek, saj je klub želel zakrpati luknjo njegovega odhoda (2 dražja nakupa).
+* Iz zemljevida je očitno, da prestopajo največkrat Španci, kar je smiselno saj gre za katalonski klub.
+* Graf povprečne starosti nam, da smiseln rezultat, za klub kot je FC Barcelona, da so prihodi večinoma mlajši od odhodov iz kluba.

@@ -9,6 +9,7 @@ library(tidyverse)
 
 prestopi <- read.csv("./analiza/prestopi.csv")
 
+#povprečno število prestopov
 prestopi_stevilo <- prestopi %>% select(X,Število_prihodov, Število_odhodov)
 prestopi_stevilo <- reshape2::melt(prestopi_stevilo, id.var = 'X')
 
@@ -16,6 +17,7 @@ prestopi_stevilo_plot <- ggplot(prestopi_stevilo, aes(x=X,y=value,colour = varia
                           geom_point()+xlab("Leto")+ylab("Število prestopov")+
                           scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
+#povprečna cena prestopa
 prestopi_cena <- prestopi %>% select(X,Povprecna_vrednost_prihoda,Povprecna_vrednost_odhoda)
 prestopi_cena <- reshape2::melt(prestopi_cena, id.var = 'X')
 
@@ -24,7 +26,7 @@ prestopi_cena_plot <- ggplot(prestopi_cena, aes(x=X,y=value,colour = variable))+
                       geom_smooth(method='lm',se=F)+
                       scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
-
+#povprečna starost prestopa
 prestopi_starost <- prestopi %>% select(X,Povprecna_starost_prihoda,Povprecna_starost_odhoda)
 prestopi_starost <- reshape2::melt(prestopi_starost, id.var = 'X')
 
@@ -32,12 +34,20 @@ prestopi_starost_plot <- ggplot(prestopi_starost, aes(x=X,y=value,colour = varia
   geom_point()+xlab("Leto")+ylab("Povprečna starost prestopov")+
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
-prestopi_skupna_prihod <- prestopi %>% select(X,Skupna_vrednost_prihodov)
-prestopi_skupna_odhod <- prestopi %>% select(X,Skupna_vrednost_odhodov)
+#skupna cena prestopov
+prestopi_skupna <- prestopi %>% select(X,Skupna_vrednost_prihodov,Skupna_vrednost_odhodov)
+prestopi_skupna <- reshape2::melt(prestopi_skupna, id.var = 'X')
 
+prestopi_skupna_plot <- ggplot(prestopi_skupna, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
+  geom_point()+xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
+  scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
+
+#plot(prestopi_skupna_plot)
 #========================================================================================================
 #napredna analiza napoved
 leta <- data.frame(X=seq(2020,2022,1))
+prestopi_skupna_prihod <- prestopi %>% select(X,Skupna_vrednost_prihodov)
+prestopi_skupna_odhod <- prestopi %>% select(X,Skupna_vrednost_odhodov)
 
 napoved_prihod <- lm(data=prestopi_skupna_prihod,prestopi_skupna_prihod$Skupna_vrednost_prihodov ~ X)
 napoved_vrednost_prihod <- mutate(leta, Skupna_vrednost_prihodov=predict(napoved_prihod, leta))
@@ -63,7 +73,7 @@ prestopi_skupna_odhod_plot <- ggplot(prestopi_skupna_odhod, aes(x=X,y=Skupna_vre
 #plot(prestopi_skupna_prihod_plot)
 #plot(prestopi_skupna_odhod_plot)
 #================================================================================================
-#polozaj prestopov
+#položaj prestopov
 
 polozaj <- read.csv("./analiza/polozaj.csv")
 polozaj_prihod_stevilo <- polozaj %>% select(X,Napadalec_prihod,Vezist_prihod,Branilec_prihod,Vratar_prihod)
@@ -107,7 +117,7 @@ colnames(drzave_odhodi) <- c('drzava','stevilo')
 source("./lib/uvozi.zemljevid.r")
 zemljevid <- uvozi.zemljevid("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip", "ne_50m_admin_0_countries", encoding="UTF-8")%>% fortify()
 
-#izris
+#izris zemljevida števila prestopov
 drzave_prihodi <- drzave_prihodi %>% right_join(zemljevid, by=c('drzava'='NAME'))
 map_prihodi <- ggplot() + geom_polygon(data=drzave_prihodi, aes(x=long, y=lat, group=group, fill=stevilo))+
   xlab('Zemljepisna širina')+ylab('Zemljepisna dolžina')+
@@ -164,8 +174,6 @@ map_vsi <- ggplot() + geom_polygon(data=drzave_vsi, aes(x=long, y=lat, group=gro
   theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
         legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
   scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost prestopov")
-
-#plot(map_vsi)
 
 #================================================================================================
 #shiny
