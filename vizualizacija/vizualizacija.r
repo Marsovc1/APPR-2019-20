@@ -1,7 +1,7 @@
 # 3. faza: Vizualizacija podatkov
 
 library(tidyverse)
-
+warning=FALSE
 #graf, ki ga želimo narisati plot(graf)
 
 #================================================================================================
