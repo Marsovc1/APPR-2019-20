@@ -101,7 +101,7 @@ plot(prestopi_skupna_plot)
 
 Spodnji graf prikazuje povprečno starost igralcev, tu se osredotočimo na to da so odhodi večinoma res starejši od prihodov.
 
-```{r graf_starost, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
+```{r graf_starost, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf povprečne starosti prestopov'}
 plot(prestopi_starost_plot)
 ```
 
@@ -114,10 +114,6 @@ plot(map_vsi)
 ***
 
 # Napredna analiza podatkov
-
-```{r analiza, echo=FALSE, message=FALSE}
-source("vizualizacija/vizualizacija.r", encoding="UTF-8")
-```
 
 Tu se osredotočimo na gibanje skupne vredno sti prihodov in odhodov skozi čas, predvsem kako se razlika skupne vrednosti prihodov in odhodov povečuje (ta se vidi v koeficientu X funkcije lm(); večji X pomeni večji naklon -> naši vrednosti sta: 25.10606 in 13.29909).
 S pomočjo funkcije lm() sem napovedal vrednosti prestopov za sezone 2020-21, 2021-22 in 2022-23. Ta napoved se zanaša na ohranjanje trenda, ki pa se ne zdi verjeten v luči dogajanja.

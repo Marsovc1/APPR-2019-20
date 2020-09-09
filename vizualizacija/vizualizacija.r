@@ -31,7 +31,7 @@ prestopi_starost <- prestopi %>% select(X,Povprecna_starost_prihoda,Povprecna_st
 prestopi_starost <- reshape2::melt(prestopi_starost, id.var = 'X')
 
 prestopi_starost_plot <- ggplot(prestopi_starost, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
-  geom_point()+xlab("Leto")+ylab("Povprecna starost prestopov")+
+  geom_point()+xlab("Leto")+ylab("Povprecna starost prestopov")+ scale_x_continuous(breaks=seq(2010, 2020, 2))
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
 #skupna cena prestopov
@@ -40,6 +40,7 @@ prestopi_skupna <- reshape2::melt(prestopi_skupna, id.var = 'X')
 
 prestopi_skupna_plot <- ggplot(prestopi_skupna, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
   geom_point()+xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
+  scale_x_continuous(breaks=seq(2010, 2020, 2))+
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
 #plot(prestopi_skupna_plot)
