@@ -2,7 +2,7 @@
 library("tidyverse")
 
 #=================================================================
-#uvozim in združim tabele
+#uvozim in zdruzim tabele
 prihod <- read.csv(file = file.path('~','Analiza Transferjev FC Barcelona','podatki','transferIN10.csv'))
 for (i in 11:19){
   prihod <- rbind(prihod, read.csv(file = file.path('~','Analiza Transferjev FC Barcelona','podatki',paste0('transferIN',i,'.csv'))))
@@ -14,14 +14,14 @@ for (i in 11:19){
 }
 
 #=================================================================
-#število prestopov, povprečna vrednost, povprečna starost, skupna vrednost prestopov
+#stevilo prestopov, povprecna vrednost, povprecna starost, skupna vrednost prestopov
 
 prestopi <- data.frame("Leto" = 2010:2019)
 
 steviloIn <- prihod %>% group_by(Leto, add = FALSE) %>%  summarise(n = n())
 steviloOut <- odhod %>% group_by(Leto, add = FALSE) %>%  summarise(n = n())
-prestopi$Število_prihodov <- steviloIn$n
-prestopi$Število_odhodov <- steviloOut$n
+prestopi$stevilo_prihodov <- steviloIn$n
+prestopi$stevilo_odhodov <- steviloOut$n
 
 avgIn <- prihod %>% group_by(Leto, add = FALSE) %>%  summarize(n = round(mean(Vrednost.transferja, na.rm=TRUE),2))
 avgOut <- odhod %>% group_by(Leto, add = FALSE) %>%  summarize(n = round(mean(Vrednost.transferja, na.rm=TRUE),2))
@@ -45,7 +45,7 @@ prestopi <- prestopi[-1]
 #polozaji
 polozaj <- data.frame("Leto" = 2010:2019)
 
-#popravimo, kadar je število vrstic manjše od 10 (npr za 2012 ni prestopov vezistov -> ni vrstice -> dodam 2012 0)
+#popravimo, kadar je stevilo vrstic manjse od 10 (npr za 2012 ni prestopov vezistov -> ni vrstice -> dodam 2012 0)
 popravi <- function(polozaj_in){
   if (nrow(polozaj_in)!=10){
     popravek <- setdiff(2010:2019,polozaj_in$Leto)
@@ -93,7 +93,7 @@ rownames(polozaj) <- polozaj[,1]
 polozaj <- polozaj[-1]
 
 #=================================================================
-#katere države so bolj prestopane -> zemljevid
+#katere drzave so bolj prestopane -> zemljevid
 
 drzave_prihodi <- data.frame("Leto" = 2010:2019)
 drzave_odhodi <- data.frame("Leto" = 2010:2019)
@@ -134,7 +134,7 @@ rownames(drzave_odhodi_vrednost) <- drzave_odhodi_vrednost[,1]
 drzave_odhodi_vrednost <- drzave_odhodi_vrednost[-1]
 drzave_odhodi_vrednost<- drzave_odhodi_vrednost[ , order(names(drzave_odhodi_vrednost))]
 #==============================================================================================
-#poglejmo skupno število
+#poglejmo skupno stevilo
 drzave <- bind_rows(prihod,odhod)
 drzave_imena <- unique(drzave$Drzavljanstvo)
 
@@ -159,22 +159,22 @@ drzave_vsi <- as.data.frame(t(drzave_vsi))
 drzave_odhodi_vrednost <- as.data.frame(t(drzave_odhodi_vrednost))
 drzave_prihodi_vrednost <- as.data.frame(t(drzave_prihodi_vrednost))
 
-drzave_vsi <- tibble::rownames_to_column(drzave_vsi, "Države")
-colnames(drzave_vsi) <- c('Države',2010:2019)
+drzave_vsi <- tibble::rownames_to_column(drzave_vsi, "Drzave")
+colnames(drzave_vsi) <- c('Drzave',2010:2019)
 
 
 drzave_prihodi <- tibble::rownames_to_column(drzave_vsi, "x")
 drzave_prihodi <- drzave_prihodi[,-1]
 
 drzave_odhodi <- drzave_odhodi[-1,]
-drzave_odhodi <- tibble::rownames_to_column(drzave_odhodi, "Države")
-colnames(drzave_odhodi) <- c('Države',2010:2019)
+drzave_odhodi <- tibble::rownames_to_column(drzave_odhodi, "Drzave")
+colnames(drzave_odhodi) <- c('Drzave',2010:2019)
 
-drzave_prihodi_vrednost <- tibble::rownames_to_column(drzave_prihodi_vrednost, "Države")
-drzave_odhodi_vrednost <- tibble::rownames_to_column(drzave_odhodi_vrednost, "Države")
+drzave_prihodi_vrednost <- tibble::rownames_to_column(drzave_prihodi_vrednost, "Drzave")
+drzave_odhodi_vrednost <- tibble::rownames_to_column(drzave_odhodi_vrednost, "Drzave")
 
 #=================================================================
-#shranimo izluščene/'analizirane' podatke v CSV-je
+#shranimo izluscene/'analizirane' podatke v CSV-je
 
 path = "./analiza/"
 

@@ -117,7 +117,7 @@ uvoz <- function(i){
     vzemiOUT <- seq(1, dolzinaOUT, 2)
     flagOUT <- flagOUT[vzemiOUT]
     
-    #sedaj moramo s pomočjo funkcije uvozRD ugotoviti koliko so bili igralci stari ob prestopu
+    #sedaj moramo s pomocjo funkcije uvozRD ugotoviti koliko so bili igralci stari ob prestopu
     #to naredimo tako, da spremenimo datume v as.date nato pogledamo as.numeric(difftime...)
     #uvoz rojstnih datumov
     rod <- uvozRD(i)
@@ -138,7 +138,7 @@ uvoz <- function(i){
     rodIN <- as.numeric(difftime(rodTabelaIN,rodIN,units="weeks")/52.25)
     rodOUT <- as.numeric(difftime(rodTabelaOUT,rodOUT,units="weeks")/52.25)
     
-    #ga zaokrožimo navzdol da dobimo starost
+    #ga zaokrozimo navzdol da dobimo starost
     tabelaIN$Starost <- floor(rodIN)
     tabelaOUT$Starost <- floor(rodOUT)
 
@@ -183,7 +183,7 @@ uvoz <- function(i){
     flagIN <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>% .[[j]]
     flagOUT <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>% .[[j+1]]
     
-    #če <td><span class="flagicon"><a href="/wiki/ potem državljanstvo sicer lahko tudi država kluba
+    #ce <td><span class="flagicon"><a href="/wiki/ potem drzavljanstvo sicer lahko tudi drzava kluba
     flagIN <- flagIN %>% html_nodes(xpath=".//td[not(@style='text-align:left;')]")
     flagOUT <- flagOUT %>% html_nodes(xpath=".//td[not(@style='text-align:left;')]")
     #ima flagicon 
@@ -223,7 +223,7 @@ uvoz <- function(i){
     tabelaOUT$`Vrednost transferja` <- gsub("/",'',tabelaOUT$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub(" ",'',tabelaOUT$`Vrednost transferja`)
     
-    #split po ',' in sestejem, če prazno vrnem 0
+    #split po ',' in sestejem, ce prazno vrnem 0
     vredIN = vector()
     for (j in tabelaIN$`Vrednost transferja`){
       j <- toString(j)

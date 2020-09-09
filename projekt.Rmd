@@ -125,7 +125,6 @@ S pomočjo funkcije lm() sem napovedal vrednosti prestopov za sezone 2020-21, 20
 ```{r graf, echo=FALSE, fig.align='center', fig.cap='Naraščanje razlike skupnih vrednosti in napoved za 2021'}
 plot(prestopi_skupna_prihod_plot)
 plot(prestopi_skupna_odhod_plot)
-print(c(napoved_prihod$coefficients['X'],napoved_odhod$coefficients['X']))
 ```
 
 ***
