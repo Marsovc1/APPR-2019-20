@@ -69,11 +69,13 @@ polozaj_stevilo_odhod_plot <- ggplot(polozaj_odhod_stevilo, aes(x=X,y=value,colo
 
 #uvoz in ureditev stevila prestopov
 drzave_prihodi <- read.csv("./analiza/drzave_prihodi.csv")
+drzave_prihodi <- drzave_prihodi[-1]
 colnames(drzave_prihodi) <- c('Drzava',2010:2019)
 drzave_prihodi <- data.frame(drzave_prihodi$Drzava,rowSums(drzave_prihodi[2:11]))
 colnames(drzave_prihodi) <- c('drzava','stevilo')
 
 drzave_odhodi <- read.csv("./analiza/drzave_odhodi.csv")
+drzave_odhodi <- drzave_odhodi[-1]
 colnames(drzave_odhodi) <- c('Drzava',2010:2019)
 drzave_odhodi <- data.frame(drzave_odhodi$Drzava,rowSums(drzave_odhodi[2:11]))
 colnames(drzave_odhodi) <- c('drzava','stevilo')
@@ -99,6 +101,7 @@ map_odhodi <- ggplot() + geom_polygon(data=drzave_odhodi, aes(x=long, y=lat, gro
 
 #analogno za skupne vrednosti
 drzave_prihodi_vrednost <- read.csv("./analiza/drzave_prihodi_vrednost.csv")
+drzave_prihodi_vrednost <- drzave_prihodi_vrednost[-1]
 colnames(drzave_prihodi_vrednost) <- c('Drzava',2010:2019)
 drzave_prihodi_vrednost <- data.frame(drzave_prihodi_vrednost$Drzava,rowSums(drzave_prihodi_vrednost[2:11]))
 colnames(drzave_prihodi_vrednost) <- c('drzava','stevilo')
@@ -111,6 +114,7 @@ map_prihodi_vrednost <- ggplot() + geom_polygon(data=drzave_prihodi_vrednost, ae
   scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost prihodov")
 
 drzave_odhodi_vrednost <- read.csv("./analiza/drzave_odhodi_vrednost.csv")
+drzave_odhodi_vrednost <- drzave_odhodi_vrednost[-1]
 colnames(drzave_odhodi_vrednost) <- c('Drzava',2010:2019)
 drzave_odhodi_vrednost <- data.frame(drzave_odhodi_vrednost$Drzava,rowSums(drzave_odhodi_vrednost[2:11]))
 colnames(drzave_odhodi_vrednost) <- c('drzava','stevilo')
@@ -126,6 +130,7 @@ map_odhodi_vrednost <- ggplot() + geom_polygon(data=drzave_odhodi_vrednost, aes(
 #================================================================================================
 #izris vseh prestopov
 drzave_vsi <- read.csv("./analiza/drzave_vsi.csv")
+drzave_vsi <- drzave_vsi[-1]
 colnames(drzave_vsi) <- c('Drzava',2010:2019)
 drzave_vsi <- data.frame(drzave_vsi$Drzava,rowSums(drzave_vsi[2:11]))
 colnames(drzave_vsi) <- c('drzava','stevilo')
@@ -137,7 +142,7 @@ map_vsi <- ggplot() + geom_polygon(data=drzave_vsi, aes(x=long, y=lat, group=gro
         legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
   scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost prestopov")
 
-plot(map_vsi)
+#plot(map_vsi)
 
 #================================================================================================
 #shiny

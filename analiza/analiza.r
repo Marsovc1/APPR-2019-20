@@ -153,20 +153,25 @@ drzave_vsi<- drzave_vsi[ , order(names(drzave_vsi))]
 #==============================================================================================
 #transponiramo dfje za vizualizacijo
 
-drzave_odhodi <- t(drzave_odhodi)
-drzave_prihodi <- t(drzave_prihodi)
-drzave_vsi <- t(drzave_vsi)
+drzave_odhodi <- as.data.frame(t(drzave_odhodi))
+drzave_prihodi <- as.data.frame(t(drzave_prihodi))
+drzave_vsi <- as.data.frame(t(drzave_vsi))
+drzave_odhodi_vrednost <- as.data.frame(t(drzave_odhodi_vrednost))
+drzave_prihodi_vrednost <- as.data.frame(t(drzave_prihodi_vrednost))
 
-colnames(drzave_odhodi) <- head(drzave_odhodi,1)
-colnames(drzave_prihodi) <- head(drzave_prihodi,1)
-colnames(drzave_vsi) <- head(drzave_vsi,1)
+drzave_vsi <- tibble::rownames_to_column(drzave_vsi, "Države")
+colnames(drzave_vsi) <- c('Države',2010:2019)
+
+
+drzave_prihodi <- tibble::rownames_to_column(drzave_vsi, "x")
+drzave_prihodi <- drzave_prihodi[,-1]
 
 drzave_odhodi <- drzave_odhodi[-1,]
-drzave_prihodi <- drzave_prihodi[-1,]
-drzave_vsi <- drzave_vsi[-1,]
+drzave_odhodi <- tibble::rownames_to_column(drzave_odhodi, "Države")
+colnames(drzave_odhodi) <- c('Države',2010:2019)
 
-drzave_odhodi_vrednost <- t(drzave_odhodi_vrednost)
-drzave_prihodi_vrednost <- t(drzave_prihodi_vrednost)
+drzave_prihodi_vrednost <- tibble::rownames_to_column(drzave_prihodi_vrednost, "Države")
+drzave_odhodi_vrednost <- tibble::rownames_to_column(drzave_odhodi_vrednost, "Države")
 
 #=================================================================
 #shranimo izluščene/'analizirane' podatke v CSV-je

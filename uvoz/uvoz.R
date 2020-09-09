@@ -166,11 +166,11 @@ uvoz <- function(i){
     tabelaIN$`Vrednost transferja` <- gsub('Fre',0,tabelaIN$`Vrednost transferja`)
     tabelaOUT$`Vrednost transferja` <- gsub('Fre',0,tabelaOUT$`Vrednost transferja`)
     
-    #vrednosti undisclosed zamenjamo z -1
-    tabelaIN$`Vrednost transferja` <- gsub("Undisclosed",'-1000000',tabelaIN$`Vrednost transferja`)
-    tabelaOUT$`Vrednost transferja` <- gsub("Undisclosed",'-1000000',tabelaOUT$`Vrednost transferja`)
-    tabelaIN$`Vrednost transferja` <- gsub("Undisclose",'-1000000',tabelaIN$`Vrednost transferja`)
-    tabelaOUT$`Vrednost transferja` <- gsub("Undisclose",'-1000000',tabelaOUT$`Vrednost transferja`)
+    #vrednosti undisclosed zamenjamo z 0
+    tabelaIN$`Vrednost transferja` <- gsub("Undisclosed",'0',tabelaIN$`Vrednost transferja`)
+    tabelaOUT$`Vrednost transferja` <- gsub("Undisclosed",'0',tabelaOUT$`Vrednost transferja`)
+    tabelaIN$`Vrednost transferja` <- gsub("Undisclose",'0',tabelaIN$`Vrednost transferja`)
+    tabelaOUT$`Vrednost transferja` <- gsub("Undisclose",'0',tabelaOUT$`Vrednost transferja`)
 
     #dodaj se 'loan out' in 'loan in', ki sta posebni tabeli
     
