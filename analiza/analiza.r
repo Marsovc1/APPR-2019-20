@@ -133,21 +133,37 @@ for (i in drzave_out){
 rownames(drzave_odhodi_vrednost) <- drzave_odhodi_vrednost[,1]
 drzave_odhodi_vrednost <- drzave_odhodi_vrednost[-1]
 drzave_odhodi_vrednost<- drzave_odhodi_vrednost[ , order(names(drzave_odhodi_vrednost))]
+#==============================================================================================
+#poglejmo skupno število
+drzave <- bind_rows(prihod,odhod)
+drzave_imena <- unique(drzave$Drzavljanstvo)
 
-#sum(drzave_prihodi$Spain) za število prihodov iz španije
+drzave_vsi <- data.frame("Leto" = 2010:2019)
 
-#skupna potrošnja po državah
+for (i in drzave_imena){
+  df <- drzave %>%group_by(Leto,add=FALSE) %>% filter(Drzavljanstvo==i)%>%summarise(n=n())
+  df <- popravi(df)
+  drzave_vsi[toString(i)] <- df$n
+}
 
-#transponiramo dfje
+rownames(drzave_vsi) <- drzave_vsi[,1]
+drzave_vsi <- drzave_vsi[-1]
+drzave_vsi<- drzave_vsi[ , order(names(drzave_vsi))]
+
+#==============================================================================================
+#transponiramo dfje za vizualizacijo
 
 drzave_odhodi <- t(drzave_odhodi)
 drzave_prihodi <- t(drzave_prihodi)
+drzave_vsi <- t(drzave_vsi)
 
 colnames(drzave_odhodi) <- head(drzave_odhodi,1)
 colnames(drzave_prihodi) <- head(drzave_prihodi,1)
+colnames(drzave_vsi) <- head(drzave_vsi,1)
 
 drzave_odhodi <- drzave_odhodi[-1,]
 drzave_prihodi <- drzave_prihodi[-1,]
+drzave_vsi <- drzave_vsi[-1,]
 
 drzave_odhodi_vrednost <- t(drzave_odhodi_vrednost)
 drzave_prihodi_vrednost <- t(drzave_prihodi_vrednost)
@@ -159,6 +175,7 @@ path = "./analiza/"
 
 write.csv(drzave_odhodi,paste0(path,'drzave_odhodi.csv'), row.names = TRUE)
 write.csv(drzave_prihodi,paste0(path,'drzave_prihodi.csv'), row.names = TRUE)
+write.csv(drzave_vsi,paste0(path,'drzave_vsi.csv'), row.names = TRUE)
 write.csv(drzave_odhodi_vrednost,paste0(path,'drzave_odhodi_vrednost.csv'), row.names = TRUE)
 write.csv(drzave_prihodi_vrednost,paste0(path,'drzave_prihodi_vrednost.csv'), row.names = TRUE)
 write.csv(polozaj,paste0(path,'polozaj.csv'), row.names = TRUE)

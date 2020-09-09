@@ -2,10 +2,10 @@
 
 library(tidyverse)
 
-#graf, ki ga želimo narisati print(graf)
+#graf, ki ga želimo narisati plot(graf)
 
 #================================================================================================
-#vrednosti prestopov
+#stevilo, povprecna cena, starost in skupna cena prestopov
 
 prestopi <- read.csv("./analiza/prestopi.csv")
 
@@ -67,13 +67,78 @@ polozaj_stevilo_odhod_plot <- ggplot(polozaj_odhod_stevilo, aes(x=X,y=value,colo
 #================================================================================================
 #drzave -> zemljevid/geoplot
 
+#uvoz in ureditev stevila prestopov
 drzave_prihodi <- read.csv("./analiza/drzave_prihodi.csv")
+colnames(drzave_prihodi) <- c('Drzava',2010:2019)
+drzave_prihodi <- data.frame(drzave_prihodi$Drzava,rowSums(drzave_prihodi[2:11]))
+colnames(drzave_prihodi) <- c('drzava','stevilo')
 
+drzave_odhodi <- read.csv("./analiza/drzave_odhodi.csv")
+colnames(drzave_odhodi) <- c('Drzava',2010:2019)
+drzave_odhodi <- data.frame(drzave_odhodi$Drzava,rowSums(drzave_odhodi[2:11]))
+colnames(drzave_odhodi) <- c('drzava','stevilo')
+
+#zemljevid
 source("./lib/uvozi.zemljevid.r")
-zemljevid <- uvozi.zemljevid("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip", "ne_110m_admin_0_countries", pot.zemljevida="", encoding="UTF-8")%>% fortify()
+zemljevid <- uvozi.zemljevid("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip", "ne_50m_admin_0_countries", encoding="UTF-8")%>% fortify()
 
-require(ggplot2)
-x <- ggplot() + geom_path(data=zemljevid, aes(x=long, y = lat, group = group))
-print(x)
+#izris
+drzave_prihodi <- drzave_prihodi %>% right_join(zemljevid, by=c('drzava'='NAME'))
+map_prihodi <- ggplot() + geom_polygon(data=drzave_prihodi, aes(x=long, y=lat, group=group, fill=stevilo))+
+  xlab('Zemljepisna širina')+ylab('Zemljepisna dolžina')+
+  theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
+        legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
+  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupno število prihodov")
 
-#drzave_prihodi <- drzave_prihodi %>% rename(SOVEREIGNT = X)
+drzave_odhodi <- drzave_odhodi %>% right_join(zemljevid, by=c("drzava"='NAME'))
+map_odhodi <- ggplot() + geom_polygon(data=drzave_odhodi, aes(x=long, y=lat, group=group, fill=stevilo))+
+  xlab('Zemljepisna širina')+ylab('Zemljepisna dolžina')+
+  theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
+        legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
+  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupno število odhodov")
+
+#analogno za skupne vrednosti
+drzave_prihodi_vrednost <- read.csv("./analiza/drzave_prihodi_vrednost.csv")
+colnames(drzave_prihodi_vrednost) <- c('Drzava',2010:2019)
+drzave_prihodi_vrednost <- data.frame(drzave_prihodi_vrednost$Drzava,rowSums(drzave_prihodi_vrednost[2:11]))
+colnames(drzave_prihodi_vrednost) <- c('drzava','stevilo')
+
+drzave_prihodi_vrednost <- drzave_prihodi_vrednost %>% right_join(zemljevid, by=c('drzava'='NAME'))
+map_prihodi_vrednost <- ggplot() + geom_polygon(data=drzave_prihodi_vrednost, aes(x=long, y=lat, group=group, fill=stevilo))+
+  xlab('Zemljepisna širina')+ylab('Zemljepisna dolžina')+
+  theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
+        legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
+  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost prihodov")
+
+drzave_odhodi_vrednost <- read.csv("./analiza/drzave_odhodi_vrednost.csv")
+colnames(drzave_odhodi_vrednost) <- c('Drzava',2010:2019)
+drzave_odhodi_vrednost <- data.frame(drzave_odhodi_vrednost$Drzava,rowSums(drzave_odhodi_vrednost[2:11]))
+colnames(drzave_odhodi_vrednost) <- c('drzava','stevilo')
+
+drzave_odhodi_vrednost <- drzave_odhodi_vrednost %>% right_join(zemljevid, by=c("drzava"='NAME'))
+map_odhodi_vrednost <- ggplot() + geom_polygon(data=drzave_odhodi_vrednost, aes(x=long, y=lat, group=group, fill=stevilo))+
+  xlab('Zemljepisna širina')+ylab('Zemljepisna dolžina')+
+  theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
+        legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
+  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost odhodov")
+
+
+#================================================================================================
+#izris vseh prestopov
+drzave_vsi <- read.csv("./analiza/drzave_vsi.csv")
+colnames(drzave_vsi) <- c('Drzava',2010:2019)
+drzave_vsi <- data.frame(drzave_vsi$Drzava,rowSums(drzave_vsi[2:11]))
+colnames(drzave_vsi) <- c('drzava','stevilo')
+
+drzave_vsi <- drzave_vsi %>% right_join(zemljevid, by=c('drzava'='NAME'))
+map_vsi <- ggplot() + geom_polygon(data=drzave_vsi, aes(x=long, y=lat, group=group, fill=stevilo))+
+  xlab('Zemljepisna širina')+ylab('Zemljepisna dolžina')+
+  theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
+        legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
+  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost prestopov")
+
+plot(map_vsi)
+
+#================================================================================================
+#shiny
+
