@@ -39,6 +39,7 @@ prestopi_skupna_plot <- ggplot(prestopi_skupna, aes(x=X,y=value,colour = variabl
   geom_point()+xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 
+plot(prestopi_skupna_plot)
 #================================================================================================
 #polozaj prestopov
 

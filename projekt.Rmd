@@ -47,8 +47,8 @@ Ustvaril sem 7 tabel (nekatere so simetrične/analogne):
 
 1. `prestopi` - podatki o prestopih
   - `leto` - spremenljivka: sezona prestopa (številka),
-  - `Število_prihodov` - meritev: število prihodov v sezoni (številka,
-  - `Število_odhodov` - meritev: število odhodov v sezoni (številka,
+  - `Število_prihodov` - meritev: število prihodov v sezoni (številka),
+  - `Število_odhodov` - meritev: število odhodov v sezoni (številka),
   - `Povprecna_vrednost_prihoda` - meritev: povprečna vrednost prihoda v sezoni (številka),
   - `Povprecna_vrednost_odhoda` - meritev: povprečna vrednost odhoda v sezoni (številka),
   - `Povprecna_starost_prihoda` - meritev: povprečna starost prihoda v sezoni (številka),
@@ -56,7 +56,7 @@ Ustvaril sem 7 tabel (nekatere so simetrične/analogne):
   - `Skupna_vrednost_prihodov` - meritev: skupna vrednost prihodov v sezoni (številka),
   - `Skupna_vrednost_odhodov` - meritev: skupna vrednost odhodov v sezoni (številka),
 
-2. `polozaj` - podatki o stevilu prestopov glede polozaj igralca
+2. `polozaj` - podatki o številu prestopov glede polozaj igralca
   - `leto` - spremenljivka: sezona prestopa (številka),
   - `Napadalec_prihod` - meritev: Koliko napadalcev je prišlov klub v sezoni (število),
   - `Vezist_prihod` - meritev: Koliko vezistov je prišlov klub v sezoni (število),
@@ -67,16 +67,32 @@ Ustvaril sem 7 tabel (nekatere so simetrične/analogne):
   - `Branilec_odhod` - meritev: Koliko branilcev je odšlo iz kluba v sezoni (število),
   - `Vratar_odhod` - meritev: Koliko vratarjev je odšlo iz kluba v sezoni (število),
   
-3. `
+3. `drzave_prihodi` (ali drzave_odhodi) - podatki o število prihodov (odhodov) glede državljanstvo v sezoni
+  - `Države` - spremenljivka: katero državljanstvo (neurejen faktor),
+  - `2010` - spremenljivka: sezona 2010-11 (število),
+  - ...
+  - `2019` - spremenljivka: sezona 2019-20 (število),
+  
+4. `drzave_vsi` (pomozna) - podatki o število prestopov glede državljanstvo v sezoni
+  - Analogno
 
-**Opomba**: da bi razpredelnica `obcine` res bila v obliki *tidy data*, bi morali odstraniti stolpec `gostota` (saj je izpeljan iz stolpcev `povrsina` in `prebivalci`), podatke o pokrajinah pa bi morali premakniti v drugo razpredelnico, saj nekatere občine pripadajo dvema pokrajinama. Podobno bi morali narediti tudi s stolpcem `odcepitev`.
+5. `drzave_prihodi_vrednost` (drzave_odhodi_vrednost) - podatki o skupni vrednosti prestopov glede državo v sezoni
+  - `Države` - spremenljivka: katero državljanstvo (neurejen faktor),
+  - `2010` - spremenljivka: sezona 2010-11 (število),
+  - ...
+  - `2019` - spremenljivka: sezona 2019-20 (število), 
 
-Spodnji graf prikazuje porazdelitev števila naselij v občinah.
+**Opomba**: da bi bila razpredelnica `prestopi` v obliki *tidy data*, bi moral odstraniti stolpca `Povprecna_vrednost_prihoda` in `Povprecna_vrednost_odhoda`, saj sta izpeljana iz stolpcov `Število_prihodov` in `Skupna_vrednost_prihodov` oziroma `Število_odhodov` in `Skupna_vrednost_odhodov`.
 
-```{r histogram, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
-ggplot(obcine, aes(x=naselja)) + geom_histogram() +
-  ggtitle("Pogostost števila naselij") + xlab("Število naselij") + ylab("Število občin")
+Spodnji graf prikazuje skupno vrednost prestopov (modra Prihodi, rdeča Odhodi).
+
+```{r path, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
+prestopi_skupna_plot <- ggplot(prestopi_skupna, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
+  geom_point()+xlab("Leto")+ylab("Skupna vrednost prestopov")+geom_vline(xintercept = 2017)+
+  scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
 ```
+
+Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 2017 (ta je označen z vertikalno črto).
 
 ***
 
