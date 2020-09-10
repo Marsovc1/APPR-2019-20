@@ -96,19 +96,19 @@ Spodnji graf prikazuje skupno vrednost prestopov (modra Prihodi, rdeča Odhodi).
 Pomen tega grafa je predvsem v prikazu vpliva prestopa Neymarja v klub PSG leta 2017 (ta je označen z vertikalno črto na x=2017).
 
 ```{r graf_skupna, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov'}
-plot(prestopi_skupna_plot)
+plot(prestopi_skupna_plot,echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf skupne vrednosti prestopov')
 ```
 
 Spodnji graf prikazuje povprečno starost igralcev, tu se osredotočimo na to da so odhodi večinoma res starejši od prihodov.
 
 ```{r graf_starost, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf povprečne starosti prestopov'}
-plot(prestopi_starost_plot)
+plot(prestopi_starost_plot,echo=FALSE, message=FALSE,fig.align='center', fig.cap='Graf povprečne starosti prestopov')
 ```
 
 Spodnji zemljevid prikazuje število vseh prestopov za posamezne države v zadnjih desetih letih.
 
 ```{r zemljevid_vsi, echo=FALSE, fig.align='center', fig.cap='Zemljevid števila prestopov za države', warning=FALSE}
-plot(map_vsi)
+plot(map_vsi, echo=FALSE, fig.align='center', fig.cap='Zemljevid števila prestopov za države', warning=FALSE)
 ```
 
 ***
@@ -119,8 +119,8 @@ Tu se osredotočimo na gibanje skupne vredno sti prihodov in odhodov skozi čas,
 S pomočjo funkcije lm() sem napovedal vrednosti prestopov za sezone 2020-21, 2021-22 in 2022-23. Ta napoved se zanaša na ohranjanje trenda, ki pa se ne zdi verjeten v luči dogajanja.
 
 ```{r graf, echo=FALSE, fig.align='center', fig.cap='Naraščanje razlike skupnih vrednosti in napoved za 2021'}
-plot(prestopi_skupna_prihod_plot)
-plot(prestopi_skupna_odhod_plot)
+plot(prestopi_skupna_prihod_plot,echo=FALSE, fig.align='center', fig.cap='Naraščanje skupnih vrednosti prihodov in napoved za 2021')
+plot(prestopi_skupna_odhod_plot,echo=FALSE, fig.align='center', fig.cap='Naraščanje skupnih vrednosti odhodov in napoved za 2021')
 ```
 
 ***
