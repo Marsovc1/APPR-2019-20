@@ -34,7 +34,7 @@ prestopi_starost_plot <- ggplot(prestopi_starost, aes(x=X,y=value,colour = varia
   geom_point()+xlab("Leto")+ylab("Povprecna starost prestopov")+ scale_x_continuous(breaks=seq(2010, 2020, 2))+
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
   
-plot(prestopi_starost_plot)
+#plot(prestopi_starost_plot)
 
 #skupna cena prestopov
 prestopi_skupna <- prestopi %>% select(X,Skupna_vrednost_prihodov,Skupna_vrednost_odhodov)
@@ -74,7 +74,7 @@ prestopi_skupna_odhod_plot <- ggplot(prestopi_skupna_odhod, aes(x=X,y=Skupna_vre
 
 #print(c(napoved_prihod$coefficients,napoved_odhod$coefficients))
 #plot(prestopi_skupna_prihod_plot)
-plot(prestopi_skupna_odhod_plot)
+#plot(prestopi_skupna_odhod_plot)
 #================================================================================================
 #polozaj prestopov
 
