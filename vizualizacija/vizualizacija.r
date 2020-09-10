@@ -31,8 +31,10 @@ prestopi_starost <- prestopi %>% select(X,Povprecna_starost_prihoda,Povprecna_st
 prestopi_starost <- reshape2::melt(prestopi_starost, id.var = 'X')
 
 prestopi_starost_plot <- ggplot(prestopi_starost, aes(x=X,y=value,colour = variable))+geom_path(size = 1)+
-  geom_point()+xlab("Leto")+ylab("Povprecna starost prestopov")+ scale_x_continuous(breaks=seq(2010, 2020, 2))
+  geom_point()+xlab("Leto")+ylab("Povprecna starost prestopov")+ scale_x_continuous(breaks=seq(2010, 2020, 2))+
   scale_color_manual(name = "Prestop", labels = c('Prihodi','Odhodi'),values=c('Blue','Red'))
+  
+plot(prestopi_starost_plot)
 
 #skupna cena prestopov
 prestopi_skupna <- prestopi %>% select(X,Skupna_vrednost_prihodov,Skupna_vrednost_odhodov)
@@ -72,7 +74,7 @@ prestopi_skupna_odhod_plot <- ggplot(prestopi_skupna_odhod, aes(x=X,y=Skupna_vre
 
 #print(c(napoved_prihod$coefficients,napoved_odhod$coefficients))
 #plot(prestopi_skupna_prihod_plot)
-#plot(prestopi_skupna_odhod_plot)
+plot(prestopi_skupna_odhod_plot)
 #================================================================================================
 #polozaj prestopov
 
@@ -174,7 +176,7 @@ map_vsi <- ggplot() + geom_polygon(data=drzave_vsi, aes(x=long, y=lat, group=gro
   xlab('Zemljepisna sirina')+ylab('Zemljepisna dolzina')+
   theme(axis.title=element_blank(), axis.text=element_blank(), axis.ticks=element_blank(), panel.background = element_blank(),
         legend.key.size = unit(1.5, "cm"),legend.key.width = unit(0.5,"cm"))+
-  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupna vrednost prestopov")
+  scale_fill_gradient(high="#008800", low="#CCFFCC")+labs(fill = "Skupno število prestopov")
 
 #================================================================================================
 #shiny
